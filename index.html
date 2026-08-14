@@ -190,6 +190,75 @@
     .card{padding:24px;}
   }
 
+  /* DEMO KARTI */
+  .card-demo{
+    position:relative; cursor:pointer; text-align:left; width:100%;
+    /* button varsayılan tipografiyi miras almıyor; diğer kartlarla
+       hizalanması için font ve satır yüksekliği açıkça devralınıyor */
+    font:inherit; line-height:inherit; color:inherit;
+    border-color:var(--violet);
+  }
+  .card-demo::after{
+    content:''; position:absolute; inset:0; border-radius:var(--radius);
+    background:radial-gradient(circle at 80% 0%, rgba(139,92,246,0.16), transparent 60%);
+    pointer-events:none;
+  }
+  .card-demo:hover{transform:translateY(-4px); box-shadow:0 12px 34px rgba(139,92,246,0.25);}
+  .card-demo:focus-visible{outline:2px solid var(--cyan); outline-offset:3px;}
+  .demo-badge{
+    position:absolute; top:16px; right:16px; z-index:1;
+    padding:4px 12px; border-radius:999px; background:var(--gradient);
+    color:#0B1120; font-size:11.5px; font-weight:800; letter-spacing:.3px;
+  }
+
+  /* DEMO MODAL */
+  .demo-overlay{
+    position:fixed; inset:0; z-index:200; display:none;
+    align-items:center; justify-content:center; padding:24px;
+    background:rgba(11,17,32,0.82); backdrop-filter:blur(6px);
+  }
+  .demo-overlay.open{display:flex;}
+  .demo-modal{
+    background:var(--surface); border:1px solid var(--surface-border);
+    border-radius:24px; padding:40px 32px; max-width:520px; width:100%;
+    text-align:center; position:relative; max-height:90vh; overflow-y:auto;
+  }
+  .demo-modal h3{font-size:26px; font-weight:800; margin-bottom:10px;}
+  .demo-sub{color:var(--text-muted); font-size:15px; margin-bottom:24px;}
+  .demo-close{
+    position:absolute; top:14px; right:18px; background:none; border:none;
+    color:var(--text-muted); font-size:30px; line-height:1; cursor:pointer;
+  }
+  .demo-close:hover{color:var(--text);}
+  .demo-status{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    padding:14px; border-radius:12px; background:var(--bg-alt);
+    border:1px solid var(--surface-border); margin-bottom:24px;
+    font-size:14.5px; color:var(--text-muted); min-height:52px;
+  }
+  .demo-dot{
+    width:10px; height:10px; min-width:10px; border-radius:50%;
+    background:var(--text-muted); transition:background .3s;
+  }
+  .demo-dot.live{background:#22C55E; animation:demoPulse 1.6s infinite;}
+  .demo-dot.busy{background:var(--cyan); animation:demoPulse 1s infinite;}
+  .demo-dot.error{background:#EF4444;}
+  @keyframes demoPulse{0%,100%{opacity:1;} 50%{opacity:.35;}}
+  .demo-actions{display:flex; justify-content:center; gap:12px; flex-wrap:wrap;}
+  .demo-actions button{cursor:pointer; font-family:inherit;}
+  .demo-actions .btn:disabled{opacity:.45; cursor:not-allowed; transform:none; box-shadow:none;}
+  .demo-hangup{display:none;}
+  .demo-overlay.in-call .demo-hangup{display:inline-block;}
+  .demo-overlay.in-call #demoStart{display:none;}
+  .demo-note{margin-top:22px; font-size:12.5px; color:var(--text-muted); opacity:.75;}
+
+  @media (max-width:600px){
+    .demo-modal{padding:32px 20px; border-radius:20px;}
+    .demo-modal h3{font-size:21px;}
+    .demo-actions{flex-direction:column;}
+    .demo-actions button{width:100%;}
+  }
+
   /* ABOUT */
   .about{background:var(--bg-alt); border-top:1px solid var(--surface-border); border-bottom:1px solid var(--surface-border);}
   .about-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center;}
@@ -384,8 +453,48 @@
       <p data-lang="tr">Talep ve destek süreçlerinizi tek platformdan uçtan uca yönetin.</p>
       <p data-lang="en">Manage your requests and support processes end-to-end on a single platform.</p>
     </div>
+    <button type="button" class="card card-demo" id="voiceAgentCard" aria-haspopup="dialog">
+      <span class="demo-badge" data-lang="tr">Canlı Demo</span>
+      <span class="demo-badge" data-lang="en">Live Demo</span>
+      <div class="card-head">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+        </div>
+        <h3 data-lang="tr">Sesli Yapay Zeka Asistanı</h3>
+        <h3 data-lang="en">AI Voice Agent</h3>
+      </div>
+      <p data-lang="tr">Müşterilerinizle doğal Türkçe konuşan, teklif veren ve satış yapan sesli asistanlar. Denemek için tıklayın.</p>
+      <p data-lang="en">Voice agents that speak natural Turkish, quote and sell. Click to try it live.</p>
+    </button>
   </div>
 </section>
+
+<!-- ===== Sesli asistan demosu ===== -->
+<div class="demo-overlay" id="demoOverlay" role="dialog" aria-modal="true" aria-labelledby="demoTitle">
+  <div class="demo-modal">
+    <button class="demo-close" id="demoClose" aria-label="Kapat">&times;</button>
+
+    <h3 id="demoTitle" data-lang="tr">Sesli Asistan Demosu</h3>
+    <h3 data-lang="en">Voice Agent Demo</h3>
+    <p class="demo-sub" data-lang="tr">Kasko sigortası satış senaryosu. Mikrofonunuza izin verip asistanla Türkçe konuşabilirsiniz.</p>
+    <p class="demo-sub" data-lang="en">An auto insurance sales scenario. Allow microphone access and talk to the agent in Turkish.</p>
+
+    <div class="demo-status" id="demoStatus">
+      <span class="demo-dot" id="demoDot"></span>
+      <span id="demoStatusText"></span>
+    </div>
+
+    <!-- Etiketler JS'ten geliyor: data-lang kullanılsaydı sitenin dil CSS'i
+         (display:revert) çağrı sırasındaki göster/gizle kuralını ezerdi. -->
+    <div class="demo-actions">
+      <button class="btn" id="demoStart"></button>
+      <button class="btn-outline demo-hangup" id="demoStop"></button>
+    </div>
+
+    <p class="demo-note" data-lang="tr">Bu bir demodur; gerçek poliçe düzenlenmez ve görüşme kaydedilmez. Kullanılan tüm bilgiler örnektir.</p>
+    <p class="demo-note" data-lang="en">This is a demo; no real policy is issued and the call is not recorded. All data shown is fictional.</p>
+  </div>
+</div>
 
 <section id="about" class="about">
   <div class="container about-grid">
@@ -469,6 +578,195 @@
       nav.classList.remove('open');
     }
   });
+</script>
+
+<!-- ===== Sesli asistan demosu ===== -->
+<script src="livekit-client.umd.js"></script>
+<script>
+(function(){
+  /* ---------------------------------------------------------------
+     AYAR — LiveKit Cloud > Settings > Project > Development token server.
+     Bu ID herkese açık; token'ı imzalayan sır sunucuda kalıyor. Yine de
+     dokümanın uyarısı geçerli: bu uç nokta kısıtsız token veriyor, geniş
+     duyuru öncesi kendi token uç noktamıza geçilmeli.
+     --------------------------------------------------------------- */
+  var TOKEN_SERVER_ID = 'voiceagentdemo-1zizk0';
+
+  var T = {
+    tr: {
+      start:'Görüşmeyi Başlat', stop:'Görüşmeyi Bitir',
+      idle:'Başlatmak için butona basın',
+      connecting:'Bağlanılıyor…', mic:'Mikrofon izni bekleniyor…',
+      waiting:'Asistan bağlanıyor…',
+      live:'Görüşme başladı — konuşabilirsiniz',
+      ended:'Görüşme sonlandı',
+      errAgent:'Asistan şu anda yanıt vermiyor. Lütfen daha sonra tekrar deneyin.',
+      errMic:'Mikrofona erişilemedi. Tarayıcı izinlerini kontrol edin.',
+      errConf:'Demo henüz yapılandırılmadı.',
+      errConn:'Bağlanılamadı. Lütfen daha sonra tekrar deneyin.',
+      errBusy:'Şu anda tüm demo hatları meşgul. Birazdan tekrar deneyin.'
+    },
+    en: {
+      start:'Start Call', stop:'End Call',
+      idle:'Press the button to start',
+      connecting:'Connecting…', mic:'Waiting for microphone permission…',
+      waiting:'Connecting the agent…',
+      live:'Call started — go ahead and speak',
+      ended:'Call ended',
+      errAgent:'The agent is not responding right now. Please try again later.',
+      errMic:'Could not access the microphone. Please check browser permissions.',
+      errConf:'The demo is not configured yet.',
+      errConn:'Could not connect. Please try again later.',
+      errBusy:'All demo lines are busy right now. Please try again shortly.'
+    }
+  };
+
+  var card    = document.getElementById('voiceAgentCard');
+  var overlay = document.getElementById('demoOverlay');
+  var closeEl = document.getElementById('demoClose');
+  var startEl = document.getElementById('demoStart');
+  var stopEl  = document.getElementById('demoStop');
+  var dotEl   = document.getElementById('demoDot');
+  var textEl  = document.getElementById('demoStatusText');
+
+  var room = null;
+  var audioEls = [];
+  var agentTimer = null;
+
+  function lang(){ return document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'tr'; }
+  function t(key){ return T[lang()][key]; }
+
+  function setStatus(key, state){
+    textEl.textContent = t(key);
+    dotEl.className = 'demo-dot' + (state ? ' ' + state : '');
+  }
+
+  function syncLabels(){
+    startEl.textContent = t('start');
+    stopEl.textContent  = t('stop');
+    if(!room && textEl.dataset.key) setStatus(textEl.dataset.key);
+  }
+  // Sitenin dil düğmesi <html lang> değiştiriyor; etiketleri ona bağlıyoruz.
+  new MutationObserver(syncLabels).observe(document.documentElement, {
+    attributes:true, attributeFilter:['lang']
+  });
+
+  function status(key, state){
+    textEl.dataset.key = key;
+    setStatus(key, state);
+  }
+
+  function openModal(){
+    overlay.classList.add('open');
+    if(!room) status('idle');
+    syncLabels();
+  }
+
+  function closeModal(){
+    hangUp();
+    overlay.classList.remove('open');
+  }
+
+  card.addEventListener('click', openModal);
+  closeEl.addEventListener('click', closeModal);
+  overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+  });
+
+  function cleanup(){
+    clearTimeout(agentTimer);
+    agentTimer = null;
+    audioEls.forEach(function(el){ el.remove(); });
+    audioEls = [];
+    room = null;
+    overlay.classList.remove('in-call');
+    startEl.disabled = false;
+  }
+
+  function hangUp(){
+    if(room){
+      var r = room;
+      room = null;
+      r.disconnect().catch(function(){});
+      cleanup();
+      status('ended');
+    }
+  }
+
+  stopEl.addEventListener('click', hangUp);
+
+  startEl.addEventListener('click', async function(){
+    if(room) return;
+    if(TOKEN_SERVER_ID === 'BURAYA_TOKEN_SERVER_ID'){
+      status('errConf', 'error');
+      return;
+    }
+
+    startEl.disabled = true;
+    status('connecting', 'busy');
+
+    var LK = window.LivekitClient;
+    var r = new LK.Room({ adaptiveStream:true, dynacast:true });
+
+    // Ajanın sesini duyabilmek için gelen ses parçalarını sayfaya bağlıyoruz.
+    r.on(LK.RoomEvent.TrackSubscribed, function(track){
+      if(track.kind === LK.Track.Kind.Audio){
+        var el = track.attach();
+        el.style.display = 'none';
+        document.body.appendChild(el);
+        audioEls.push(el);
+      }
+    });
+
+    r.on(LK.RoomEvent.Disconnected, function(){
+      if(room){ cleanup(); status('ended'); }
+    });
+
+    try{
+      var tokenSource = LK.TokenSource.sandboxTokenServer(TOKEN_SERVER_ID);
+      var cred = await tokenSource.fetch({
+        roomName: 'locx-demo-' + Math.random().toString(36).slice(2, 10),
+        participantName: 'web-ziyaretci'
+      });
+
+      await r.connect(cred.serverUrl, cred.participantToken);
+      room = r;
+      overlay.classList.add('in-call');
+
+      status('mic', 'busy');
+      await r.localParticipant.setMicrophoneEnabled(true);
+
+      // Ajan deploy edilmemişse ziyaretçi boş odada sessizlik duyar; onun
+      // yerine odaya katılmasını bekleyip katılmazsa açık hata gösteriyoruz.
+      if(r.remoteParticipants.size > 0){
+        status('live', 'live');
+      }else{
+        status('waiting', 'busy');
+        r.once(LK.RoomEvent.ParticipantConnected, function(){
+          clearTimeout(agentTimer);
+          if(room) status('live', 'live');
+        });
+        agentTimer = setTimeout(function(){
+          if(room && room.remoteParticipants.size === 0){
+            hangUp();
+            status('errAgent', 'error');
+          }
+        }, 15000);
+      }
+    }catch(err){
+      console.error('[LoCX demo]', err);
+      try{ await r.disconnect(); }catch(e){}
+      cleanup();
+      var msg = String(err && (err.message || err));
+      if(/permission|NotAllowed|denied/i.test(msg))      status('errMic', 'error');
+      else if(/quota|limit|exceed|busy/i.test(msg))      status('errBusy', 'error');
+      else                                               status('errConn', 'error');
+    }
+  });
+
+  syncLabels();
+})();
 </script>
 
 </body>
