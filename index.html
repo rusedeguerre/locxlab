@@ -466,6 +466,19 @@
       <p data-lang="tr">Müşterilerinizle doğal Türkçe konuşan, teklif veren ve satış yapan sesli asistanlar. Denemek için tıklayın.</p>
       <p data-lang="en">Voice agents that speak natural Turkish, quote and sell. Click to try it live.</p>
     </button>
+    <button type="button" class="card card-demo" id="ogrenciAgentCard" aria-haspopup="dialog">
+      <span class="demo-badge" data-lang="tr">Canlı Demo</span>
+      <span class="demo-badge" data-lang="en">Live Demo</span>
+      <div class="card-head">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/><line x1="22" y1="10" x2="22" y2="16"/></svg>
+        </div>
+        <h3 data-lang="tr">Öğrenci İşleri Asistanı</h3>
+        <h3 data-lang="en">Student Affairs Assistant</h3>
+      </div>
+      <p data-lang="tr">Üniversiteler için gelen çağrı asistanı: kayıt, harç ve belge sorularını yanıtlar, talep oluşturur. Denemek için tıklayın.</p>
+      <p data-lang="en">An inbound assistant for universities: answers enrolment, tuition and document questions. Click to try it live.</p>
+    </button>
   </div>
 </section>
 
@@ -474,10 +487,10 @@
   <div class="demo-modal">
     <button class="demo-close" id="demoClose" aria-label="Kapat">&times;</button>
 
-    <h3 id="demoTitle" data-lang="tr">Sesli Asistan Demosu</h3>
-    <h3 data-lang="en">Voice Agent Demo</h3>
-    <p class="demo-sub" data-lang="tr">Kasko sigortası satış senaryosu. Mikrofonunuza izin verip asistanla Türkçe konuşabilirsiniz.</p>
-    <p class="demo-sub" data-lang="en">An auto insurance sales scenario. Allow microphone access and talk to the agent in Turkish.</p>
+    <!-- Başlık ve alt yazı JS'ten geliyor: hem tıklanan senaryoya hem de
+         sayfa diline göre değişiyor, data-lang tek başına yetmiyor. -->
+    <h3 id="demoTitle"></h3>
+    <p class="demo-sub" id="demoSub"></p>
 
     <div class="demo-status" id="demoStatus">
       <span class="demo-dot" id="demoDot"></span>
@@ -621,14 +634,37 @@
     }
   };
 
-  var card    = document.getElementById('voiceAgentCard');
+  /* Senaryolar. `oda` öneki ajanın hangi senaryoyu açacağını belirliyor:
+     ajan tarafında agent.py `locx-<oda>-<rastgele>` biçimindeki oda adının
+     ikinci parçasına bakıyor. Tanımadığı önek kaskoya düşüyor, o yüzden
+     site ile ajanı aynı anda yayına almak gerekmiyor. */
+  var SENARYOLAR = {
+    kasko: {
+      oda: 'kasko',
+      tr: { baslik:'Sesli Asistan Demosu',
+            alt:'Kasko sigortası satış senaryosu. Mikrofonunuza izin verip asistanla Türkçe konuşabilirsiniz.' },
+      en: { baslik:'Voice Agent Demo',
+            alt:'An auto insurance sales scenario. Allow microphone access and talk to the agent in Turkish.' }
+    },
+    ogrenci: {
+      oda: 'ogrenci',
+      tr: { baslik:'Öğrenci İşleri Asistanı',
+            alt:'Demo Üniversitesi öğrenci işleri hattı. Kayıt, harç ve belge konularında Türkçe soru sorabilirsiniz.' },
+      en: { baslik:'Student Affairs Assistant',
+            alt:'A university student affairs line. Ask about enrolment, tuition and documents — in Turkish.' }
+    }
+  };
+
   var overlay = document.getElementById('demoOverlay');
   var closeEl = document.getElementById('demoClose');
   var startEl = document.getElementById('demoStart');
   var stopEl  = document.getElementById('demoStop');
   var dotEl   = document.getElementById('demoDot');
   var textEl  = document.getElementById('demoStatusText');
+  var titleEl = document.getElementById('demoTitle');
+  var subEl   = document.getElementById('demoSub');
 
+  var senaryo = SENARYOLAR.kasko;
   var room = null;
   var audioEls = [];
   var agentTimer = null;
@@ -644,6 +680,8 @@
   function syncLabels(){
     startEl.textContent = t('start');
     stopEl.textContent  = t('stop');
+    titleEl.textContent = senaryo[lang()].baslik;
+    subEl.textContent   = senaryo[lang()].alt;
     if(!room && textEl.dataset.key) setStatus(textEl.dataset.key);
   }
   // Sitenin dil düğmesi <html lang> değiştiriyor; etiketleri ona bağlıyoruz.
@@ -656,7 +694,10 @@
     setStatus(key, state);
   }
 
-  function openModal(){
+  function openModal(secilen){
+    // Görüşme sürerken başka bir karta tıklanırsa senaryoyu değiştirme;
+    // aksi halde başlık açık çağrıyla uyumsuz kalır.
+    if(!room) senaryo = secilen;
     overlay.classList.add('open');
     if(!room) status('idle');
     syncLabels();
@@ -667,7 +708,10 @@
     overlay.classList.remove('open');
   }
 
-  card.addEventListener('click', openModal);
+  document.getElementById('voiceAgentCard')
+          .addEventListener('click', function(){ openModal(SENARYOLAR.kasko); });
+  document.getElementById('ogrenciAgentCard')
+          .addEventListener('click', function(){ openModal(SENARYOLAR.ogrenci); });
   closeEl.addEventListener('click', closeModal);
   overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
   document.addEventListener('keydown', function(e){
@@ -726,7 +770,7 @@
     try{
       var tokenSource = LK.TokenSource.sandboxTokenServer(TOKEN_SERVER_ID);
       var cred = await tokenSource.fetch({
-        roomName: 'locx-demo-' + Math.random().toString(36).slice(2, 10),
+        roomName: 'locx-' + senaryo.oda + '-' + Math.random().toString(36).slice(2, 10),
         participantName: 'web-ziyaretci'
       });
 
