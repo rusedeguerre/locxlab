@@ -479,6 +479,19 @@
       <p data-lang="tr">Üniversiteler için gelen çağrı asistanı: kayıt, harç ve belge sorularını yanıtlar, talep oluşturur. Denemek için tıklayın.</p>
       <p data-lang="en">An inbound assistant for universities: answers enrolment, tuition and document questions. Click to try it live.</p>
     </button>
+    <button type="button" class="card card-demo" id="yonetimAgentCard" aria-haspopup="dialog">
+      <span class="demo-badge" data-lang="tr">Canlı Demo</span>
+      <span class="demo-badge" data-lang="en">Live Demo</span>
+      <div class="card-head">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 9h2M13 9h2M9 13h2M13 13h2M9 17h2M13 17h2"/></svg>
+        </div>
+        <h3 data-lang="tr">Site Yönetimi Asistanı</h3>
+        <h3 data-lang="en">Property Management Assistant</h3>
+      </div>
+      <p data-lang="tr">Aidat, otopark, arıza ve misafir işlemleri. Riske göre kademeli kimlik doğrulama yapar. Denemek için tıklayın.</p>
+      <p data-lang="en">Dues, parking, maintenance and guest access — with risk-based identity verification. Click to try it live.</p>
+    </button>
   </div>
 </section>
 
@@ -652,6 +665,13 @@
             alt:'ABC Üniversitesi öğrenci işleri hattı. Kayıt, harç ve belge konularında Türkçe soru sorabilirsiniz.' },
       en: { baslik:'Student Affairs Assistant',
             alt:'A university student affairs line. Ask about enrolment, tuition and documents — in Turkish.' }
+    },
+    yonetim: {
+      oda: 'yonetim',
+      tr: { baslik:'Site Yönetimi Asistanı',
+            alt:'Sweet Home Sitesi yönetim hattı. Aidat, otopark, arıza ve misafir işlemleri için Türkçe konuşabilirsiniz.' },
+      en: { baslik:'Property Management Assistant',
+            alt:'A residential complex management line. Dues, parking, maintenance and guest access — in Turkish.' }
     }
   };
 
@@ -712,6 +732,8 @@
           .addEventListener('click', function(){ openModal(SENARYOLAR.kasko); });
   document.getElementById('ogrenciAgentCard')
           .addEventListener('click', function(){ openModal(SENARYOLAR.ogrenci); });
+  document.getElementById('yonetimAgentCard')
+          .addEventListener('click', function(){ openModal(SENARYOLAR.yonetim); });
   closeEl.addEventListener('click', closeModal);
   overlay.addEventListener('click', function(e){ if(e.target === overlay) closeModal(); });
   document.addEventListener('keydown', function(e){
