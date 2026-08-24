@@ -517,8 +517,8 @@
       <button class="btn-outline demo-hangup" id="demoStop"></button>
     </div>
 
-    <p class="demo-note" data-lang="tr">Bu bir demodur; gerçek poliçe düzenlenmez ve görüşme kaydedilmez. Kullanılan tüm bilgiler örnektir.</p>
-    <p class="demo-note" data-lang="en">This is a demo; no real policy is issued and the call is not recorded. All data shown is fictional.</p>
+    <!-- Uyarı metni senaryoya göre değişiyor; JS'ten dolduruluyor. -->
+    <p class="demo-note" id="demoNote"></p>
   </div>
 </div>
 
@@ -655,23 +655,29 @@
     kasko: {
       oda: 'kasko',
       tr: { baslik:'Sesli Asistan Demosu',
-            alt:'Kasko sigortası satış senaryosu. Mikrofonunuza izin verip asistanla Türkçe konuşabilirsiniz.' },
+            alt:'Kasko sigortası satış senaryosu. Mikrofonunuza izin verip asistanla Türkçe konuşabilirsiniz.',
+            not:'Bu bir tanıtım uygulamasıdır; gerçek poliçe düzenlenmez. Araç, prim ve ödeme bilgileri örnektir. Görüşme kaydedilmez.' },
       en: { baslik:'Voice Agent Demo',
-            alt:'An auto insurance sales scenario. Allow microphone access and talk to the agent in Turkish.' }
+            alt:'An auto insurance sales scenario. Allow microphone access and talk to the agent in Turkish.',
+            not:'This is a demo; no real policy is issued. Vehicle, premium and payment details are fictional. Call is not recorded.' }
     },
     ogrenci: {
       oda: 'ogrenci',
       tr: { baslik:'Öğrenci İşleri Asistanı',
-            alt:'ABC Üniversitesi öğrenci işleri hattı. Kayıt, harç ve belge konularında Türkçe soru sorabilirsiniz.' },
+            alt:'ABC Üniversitesi öğrenci işleri hattı. Kayıt, harç ve belge konularında Türkçe soru sorabilirsiniz.',
+            not:'Bu bir tanıtım uygulamasıdır; gerçek bir öğrenci kaydı sorgulanmaz. Üniversite, tarihler ve talep numaraları örnektir. Görüşme kaydedilmez.' },
       en: { baslik:'Student Affairs Assistant',
-            alt:'A university student affairs line. Ask about enrolment, tuition and documents — in Turkish.' }
+            alt:'A university student affairs line. Ask about enrolment, tuition and documents — in Turkish.',
+            not:'This is a demo; no real student record is queried. The university, dates and reference numbers are fictional. Call is not recorded.' }
     },
     yonetim: {
       oda: 'yonetim',
       tr: { baslik:'Site Yönetimi Asistanı',
-            alt:'Sweet Home Sitesi yönetim hattı. Aidat, otopark, arıza ve misafir işlemleri için Türkçe konuşabilirsiniz.' },
+            alt:'Sweet Home Sitesi yönetim hattı. Aidat, otopark, arıza ve misafir işlemleri için Türkçe konuşabilirsiniz.',
+            not:'Bu bir tanıtım uygulamasıdır; gerçek bir kayıt oluşturulmaz. Site, daire, aidat ve iletişim bilgileri örnektir. Görüşme kaydedilmez.' },
       en: { baslik:'Property Management Assistant',
-            alt:'A residential complex management line. Dues, parking, maintenance and guest access — in Turkish.' }
+            alt:'A residential complex management line. Dues, parking, maintenance and guest access — in Turkish.',
+            not:'This is a demo; no real record is created. The complex, flat, dues and contact details are fictional. Call is not recorded.' }
     }
   };
 
@@ -683,6 +689,7 @@
   var textEl  = document.getElementById('demoStatusText');
   var titleEl = document.getElementById('demoTitle');
   var subEl   = document.getElementById('demoSub');
+  var noteEl  = document.getElementById('demoNote');
 
   var senaryo = SENARYOLAR.kasko;
   var room = null;
@@ -702,6 +709,7 @@
     stopEl.textContent  = t('stop');
     titleEl.textContent = senaryo[lang()].baslik;
     subEl.textContent   = senaryo[lang()].alt;
+    noteEl.textContent  = senaryo[lang()].not;
     if(!room && textEl.dataset.key) setStatus(textEl.dataset.key);
   }
   // Sitenin dil düğmesi <html lang> değiştiriyor; etiketleri ona bağlıyoruz.
