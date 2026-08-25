@@ -610,13 +610,28 @@
 <script src="livekit-client.umd.js"></script>
 <script>
 (function(){
-  /* ---------------------------------------------------------------
-     AYAR — LiveKit Cloud > Settings > Project > Development token server.
-     Bu ID herkese açık; token'ı imzalayan sır sunucuda kalıyor. Yine de
-     dokümanın uyarısı geçerli: bu uç nokta kısıtsız token veriyor, geniş
-     duyuru öncesi kendi token uç noktamıza geçilmeli.
-     --------------------------------------------------------------- */
-  var TOKEN_SERVER_ID = 'voiceagentdemo-1zizk0';
+  /* ═══════════════════════════════════════════════════════════════
+     HESAP SEÇİMİ — kredi bitince burayı 'a' <-> 'b' yap, dosyayı yükle.
+
+     İki LiveKit hesabında da ajan deploy edilmiş durumda; her hesabın
+     kendi aylık kredisi var. Değiştirmek için TEK satır yeterli çünkü
+     token server cevabında sunucu adresi de geliyor — sitenin LiveKit
+     URL'sini ya da API anahtarını bilmesine gerek yok.
+
+     Token server ID: LiveKit Cloud > Settings > Project >
+     Development token server anahtarını aç, altında beliren ID.
+     ═══════════════════════════════════════════════════════════════ */
+  var HESAP = 'a';                       // <-- 'a' veya 'b'
+
+  var TOKEN_SERVERS = {
+    a: 'voiceagentdemo-1zizk0',          // voiceagentdemo
+    b: 'voiceagent-1puc2b'        // voiceagent-0toisayk
+  };
+
+  /* Not: bu ID herkese açık; token'ı imzalayan sır sunucuda kalıyor. Yine de
+     dokümanın uyarısı geçerli — bu uç nokta kısıtsız token veriyor, geniş
+     duyuru öncesi kendi token uç noktamıza geçilmeli. */
+  var TOKEN_SERVER_ID = TOKEN_SERVERS[HESAP];
 
   var T = {
     tr: {
@@ -772,7 +787,9 @@
 
   startEl.addEventListener('click', async function(){
     if(room) return;
-    if(TOKEN_SERVER_ID === 'BURAYA_TOKEN_SERVER_ID'){
+    // Seçili hesabın token server ID'si girilmemişse bağlanmayı deneme.
+    if(!TOKEN_SERVER_ID || TOKEN_SERVER_ID.indexOf('BURAYA') === 0){
+      console.error('[LoCX demo] HESAP=' + HESAP + ' için token server ID girilmemiş.');
       status('errConf', 'error');
       return;
     }
