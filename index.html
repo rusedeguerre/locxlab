@@ -3,82 +3,88 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LoCX — Lab</title>
-<meta name="description" content="LoCX: Profesyonel danışmanlık, çağrı merkezi, yazılım & AI dönüşümü, konuşma/metin analitiği, santral ve kurumsal performans yönetimi çözümleri.">
+<title>LoCX Lab — Technology &amp; Consulting</title>
+<meta name="description" content="LoCX Lab: Profesyonel danışmanlık, çağrı merkezi, yazılım & Yapay Zeka dönüşümü, konuşma/metin analitiği, santral ve kurumsal performans yönetimi çözümleri.">
+<link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="locx-icon-512.png">
 <link rel="apple-touch-icon" href="locx-icon-512.png">
 
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://locxlab.com/">
-<meta property="og:site_name" content="LoCX">
-<meta property="og:title" content="LoCX — Lab">
-<meta property="og:description" content="Profesyonel danışmanlık, çağrı merkezi, yazılım & AI dönüşümü, konuşma/metin analitiği, santral ve kurumsal performans yönetimi çözümleri.">
+<meta property="og:site_name" content="LoCX Lab">
+<meta property="og:title" content="LoCX Lab — Technology & Consulting">
+<meta property="og:description" content="Profesyonel danışmanlık, çağrı merkezi, yazılım & Yapay Zeka dönüşümü, konuşma/metin analitiği, santral ve kurumsal performans yönetimi çözümleri.">
 <meta property="og:image" content="https://locxlab.com/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="tr_TR">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="LoCX — Lab">
-<meta name="twitter:description" content="Profesyonel danışmanlık, çağrı merkezi, yazılım & AI dönüşümü, konuşma/metin analitiği, santral ve kurumsal performans yönetimi çözümleri.">
+<meta name="twitter:title" content="LoCX Lab — Technology & Consulting">
+<meta name="twitter:description" content="Profesyonel danışmanlık, çağrı merkezi, yazılım & Yapay Zeka dönüşümü, konuşma/metin analitiği, santral ve kurumsal performans yönetimi çözümleri.">
 <meta name="twitter:image" content="https://locxlab.com/og-image.png">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0B1120;
-    --bg-alt:#0F172A;
-    --surface:#141B2E;
-    --surface-border:#232C42;
-    --text:#F8FAFC;
-    --text-muted:#94A3B8;
-    --violet:#8B5CF6;
-    --cyan:#22D3EE;
-    --gradient: linear-gradient(135deg, var(--violet), var(--cyan));
-    --radius:16px;
+    --navy:#0F2733;
+    --petrol:#2F7192;
+    --petrol-dark:#235873;
+    --orange:#FF6B1A;
+    --mist:#B9CCD5;
+    --bg:#F5F8FA;
+    --white:#FFFFFF;
+    --petrol-tint:#E4EFF4;
+    --orange-tint:#FFEEE3;
+    --text:#0F2733;
+    --text-muted:#4F6672;
+    --border:#DCE6EB;
+    --radius:18px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
+  html{scroll-behavior:smooth; scroll-padding-top:90px;}
   body{
-    font-family:'Inter', -apple-system, Segoe UI, Roboto, sans-serif;
-    background:var(--bg);
+    font-family:'Jost', 'Futura', 'Century Gothic', -apple-system, Segoe UI, Roboto, sans-serif;
+    background:var(--white);
     color:var(--text);
     line-height:1.6;
+    font-size:17px;
     overflow-x:hidden;
   }
   a{color:inherit; text-decoration:none;}
   img,svg{max-width:100%;}
-  .container{max-width:1140px; margin:0 auto; padding:0 24px;}
+  .container{max-width:1160px; margin:0 auto; padding:0 28px;}
 
-  /* NAV */
+  /* HEADER */
   header{
     position:sticky; top:0; z-index:100;
-    background:rgba(11,17,32,0.85);
+    background:rgba(255,255,255,0.94);
     backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--surface-border);
+    border-bottom:1px solid var(--border);
   }
-  nav{display:flex; align-items:center; justify-content:space-between; padding:36px 24px; position:relative;}
-  .logo{display:flex; align-items:center; gap:10px; font-weight:800; font-size:22px;}
-  .logo svg{height:40px; width:auto; display:block;}
-  .nav-links{display:flex; align-items:center; gap:32px;}
-  .nav-links a{font-size:15px; font-weight:500; color:var(--text-muted); transition:color .2s;}
-  .nav-links a:hover{color:var(--text);}
-  .lang-toggle{
-    display:flex; border:1px solid var(--surface-border); border-radius:999px; overflow:hidden;
-  }
+  header nav.container{display:flex; align-items:center; justify-content:space-between; padding:26px 28px; position:relative;}
+  .logo{display:flex; align-items:center;}
+  .logo img{height:44px; width:auto; display:block;}
+  .nav-links{display:flex; align-items:center; gap:36px;}
+  .nav-links a{font-size:17px; font-weight:500; color:var(--navy); transition:color .2s;}
+  .nav-links a:hover{color:var(--petrol);}
+  .lang-toggle{display:flex; border:1.5px solid var(--petrol); border-radius:999px; overflow:hidden;}
   .lang-toggle button{
-    background:transparent; border:none; color:var(--text-muted); font-weight:600; font-size:13px;
-    padding:6px 14px; cursor:pointer; transition:.2s;
+    background:transparent; border:none; color:var(--petrol); font-family:inherit; font-weight:600; font-size:14px;
+    padding:7px 16px; cursor:pointer; transition:.2s;
   }
-  .lang-toggle button.active{background:var(--gradient); color:#0B1120;}
-  .mobile-toggle{display:none; background:none; border:none; color:var(--text); font-size:26px; cursor:pointer; line-height:1;}
+  .lang-toggle button.active{background:var(--petrol); color:#fff;}
+  .mobile-toggle{display:none; background:none; border:none; color:var(--navy); font-size:30px; cursor:pointer; line-height:1;}
 
   @media (max-width:860px){
+    header nav.container{padding:20px 20px;}
+    .logo img{height:36px;}
     .nav-links{
-      position:absolute; top:100%; left:0; right:0; background:var(--bg-alt);
+      position:absolute; top:100%; left:0; right:0; background:var(--white);
       flex-direction:column; align-items:flex-start; padding:20px 24px 28px; gap:18px;
-      border-bottom:1px solid var(--surface-border);
+      border-bottom:1px solid var(--border); box-shadow:0 18px 30px rgba(15,39,51,0.08);
       transform:translateY(-8px); opacity:0; visibility:hidden;
       transition:transform .25s ease, opacity .25s ease, visibility .25s;
       max-height:80vh; overflow-y:auto;
@@ -87,162 +93,152 @@
     .mobile-toggle{display:block;}
   }
 
+  /* BUTTONS */
+  .btn{
+    padding:15px 34px; border-radius:999px; font-weight:600; font-size:17px; text-align:center;
+    background:var(--orange); color:var(--navy); transition:transform .2s, box-shadow .2s, background .2s;
+    border:2px solid var(--orange);
+  }
+  .btn:hover{transform:translateY(-2px); box-shadow:0 12px 26px rgba(255,107,26,0.30);}
+  .btn-outline{
+    padding:15px 32px; border-radius:999px; font-weight:600; font-size:17px; text-align:center;
+    border:2px solid var(--petrol); color:var(--petrol); background:transparent; transition:background .2s, color .2s;
+  }
+  .btn-outline:hover{background:var(--petrol); color:#fff;}
+  .actions{display:flex; flex-wrap:wrap; gap:14px;}
+
+  .eyebrow{
+    padding:6px 18px; border-radius:999px;
+    background:var(--petrol-tint); color:var(--petrol);
+    font-size:14px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:22px;
+  }
+  html[lang="tr"] .eyebrow[data-lang="tr"], html[lang="en"] .eyebrow[data-lang="en"]{display:inline-block;}
+
   /* HERO */
   .hero{
-    padding:120px 24px 100px;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
+    background:linear-gradient(180deg, #F5F8FA 0%, #EAF2F6 100%);
+    position:relative; overflow:hidden;
   }
-  .hero::before{
-    content:'';
-    position:absolute; top:-200px; left:50%; transform:translateX(-50%);
-    width:900px; height:600px; max-width:none;
-    background:radial-gradient(circle, rgba(139,92,246,0.25), transparent 70%);
-    z-index:0;
-  }
-  .hero-content{position:relative; z-index:1;}
-  .eyebrow{
-    display:inline-block; padding:6px 16px; border-radius:999px;
-    background:var(--surface); border:1px solid var(--surface-border);
-    font-size:13px; font-weight:600; color:var(--cyan); margin-bottom:24px;
-  }
-  .hero h1{
-    font-size:56px; font-weight:800; letter-spacing:-1px; max-width:820px; margin:0 auto 20px;
-  }
-  .hero h1 span{
-    background:var(--gradient); -webkit-background-clip:text; background-clip:text; color:transparent;
-  }
-  .hero p{font-size:19px; color:var(--text-muted); max-width:640px; margin:0 auto 36px;}
-  .btn{
-    display:inline-block; padding:14px 32px; border-radius:999px; font-weight:700; font-size:15px;
-    background:var(--gradient); color:#0B1120; transition:transform .2s, box-shadow .2s;
-  }
-  .btn:hover{transform:translateY(-2px); box-shadow:0 10px 30px rgba(139,92,246,0.35);}
-  .btn-outline{
-    display:inline-block; padding:13px 30px; border-radius:999px; font-weight:700; font-size:15px;
-    border:1px solid var(--surface-border); margin-left:12px; color:var(--text);
-  }
+  .hero-grid{display:grid; grid-template-columns:1.25fr 0.75fr; gap:48px; align-items:center; padding:96px 28px 88px;}
+  .hero h1{font-size:62px; line-height:1.08; font-weight:700; letter-spacing:-1px; margin-bottom:22px; color:var(--navy);}
+  .hero h1 span{color:var(--petrol);}
+  .hero h1 span{text-decoration:underline; text-decoration-color:var(--orange); text-decoration-thickness:5px; text-underline-offset:10px;}
+  .hero p{font-size:21px; color:var(--text-muted); max-width:560px; margin-bottom:36px;}
+  .hero-art{display:flex; justify-content:center;}
+  .hero-art img{width:100%; max-width:330px; height:auto; filter:drop-shadow(0 24px 30px rgba(47,113,146,0.18));}
 
-  @media (max-width:860px){
-    .hero h1{font-size:42px;}
-    .section-head h2{font-size:30px;}
-    .about h2{font-size:28px;}
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr; text-align:center; padding:72px 24px 64px;}
+    .hero h1{font-size:46px;}
+    .hero p{margin-left:auto; margin-right:auto;}
+    .hero .actions{justify-content:center;}
+    .hero-art{display:none;}
   }
-
   @media (max-width:600px){
-    .hero{padding:90px 20px 60px;}
-    .hero h1{font-size:32px; letter-spacing:-0.5px;}
-    .hero p{font-size:16px;}
-    section{padding:56px 0;}
-    html[lang="tr"] .hero a[data-lang="tr"],
-    html[lang="en"] .hero a[data-lang="en"]{
-      display:block; width:100%; max-width:300px; margin:12px auto 0;
-    }
+    .hero-grid{padding:56px 20px 52px;}
+    .hero h1{font-size:36px; letter-spacing:-0.5px;}
+    .hero p{font-size:18px;}
+    .hero .actions{flex-direction:column; align-items:stretch; max-width:320px; margin:0 auto;}
   }
 
   /* STATS */
-  .stats{
-    display:flex; justify-content:center; gap:60px; flex-wrap:wrap;
-    padding:0 24px 100px; position:relative; z-index:1;
-  }
+  .stats{background:var(--navy); color:#fff;}
+  .stats-inner{display:flex; justify-content:center; gap:90px; flex-wrap:wrap; padding:38px 28px;}
   .stat{text-align:center;}
-  .stat .num{font-size:38px; font-weight:800; background:var(--gradient); -webkit-background-clip:text; background-clip:text; color:transparent;}
-  .stat .label{font-size:14px; color:var(--text-muted); margin-top:4px;}
-
+  .stat .num{font-size:44px; font-weight:700; color:var(--orange); line-height:1.1;}
+  .stat .label{font-size:16px; color:var(--mist); margin-top:4px;}
   @media (max-width:600px){
-    .stats{gap:32px; padding-bottom:60px;}
-    .stat .num{font-size:30px;}
+    .stats-inner{gap:28px; padding:30px 20px;}
+    .stat .num{font-size:32px;}
+    .stat .label{font-size:14px;}
   }
 
-  /* SECTION HEADERS */
-  section{padding:90px 0;}
-  .section-head{text-align:center; max-width:640px; margin:0 auto 56px; padding:0 4px;}
-  .section-head .eyebrow{margin-bottom:16px;}
-  .section-head h2{font-size:36px; font-weight:800; margin-bottom:14px; letter-spacing:-0.5px;}
-  .section-head p{color:var(--text-muted); font-size:16px;}
-
+  /* SECTIONS */
+  section{padding:100px 0;}
+  section.container{padding-top:100px; padding-bottom:100px;}
+  .section-head{text-align:center; max-width:680px; margin:0 auto 60px;}
+  .section-head h2{font-size:42px; font-weight:700; line-height:1.15; margin-bottom:16px; letter-spacing:-0.5px;}
+  .section-head p{color:var(--text-muted); font-size:19px;}
+  @media (max-width:860px){ .section-head h2{font-size:34px;} }
   @media (max-width:600px){
+    section{padding:64px 0;}
+    section.container{padding-top:64px; padding-bottom:64px;}
     .section-head{margin-bottom:40px;}
-    .section-head h2{font-size:26px;}
+    .section-head h2{font-size:29px;}
+    .section-head p{font-size:17px;}
   }
 
   /* SERVICES */
-  .services-grid{
-    display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:24px;
-  }
+  .services-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:26px;}
   .card{
-    background:var(--surface); border:1px solid var(--surface-border); border-radius:var(--radius);
-    padding:32px; transition:transform .25s, border-color .25s;
+    background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius);
+    padding:34px; transition:transform .25s, border-color .25s, box-shadow .25s;
   }
-  .card:hover{transform:translateY(-4px); border-color:var(--violet);}
+  .card:hover{transform:translateY(-5px); border-color:var(--orange); box-shadow:0 18px 36px rgba(15,39,51,0.08);}
   .card-head{display:flex; align-items:center; gap:16px; margin-bottom:16px;}
   .card .icon{
-    width:48px; height:48px; min-width:48px; border-radius:12px; background:var(--gradient);
-    display:flex; align-items:center; justify-content:center;
+    width:56px; height:56px; min-width:56px; border-radius:28px; background:var(--petrol-tint);
+    display:flex; align-items:center; justify-content:center; transition:background .25s;
   }
-  .card .icon svg{width:24px; height:24px;}
-  .card h3{font-size:19px; font-weight:700; margin-bottom:0;}
-  .card p{font-size:14.5px; color:var(--text-muted);}
-
+  .card .icon svg{width:27px; height:27px; stroke:var(--petrol); transition:stroke .25s;}
+  .card:hover .icon{background:var(--orange-tint);}
+  .card:hover .icon svg{stroke:var(--orange);}
+  .card h3{font-size:22px; font-weight:600; line-height:1.2; margin-bottom:0;}
+  .card p{font-size:17px; color:var(--text-muted);}
   @media (max-width:480px){
     .services-grid{grid-template-columns:1fr; gap:16px;}
-    .card{padding:24px;}
+    .card{padding:26px;}
+    .card h3{font-size:20px;}
   }
 
-  /* DEMO KARTI */
+
+  /* CANLI DEMO KARTLARI */
   .card-demo{
     position:relative; cursor:pointer; text-align:left; width:100%;
-    /* button varsayılan tipografiyi miras almıyor; diğer kartlarla
-       hizalanması için font ve satır yüksekliği açıkça devralınıyor */
     font:inherit; line-height:inherit; color:inherit;
-    border-color:var(--violet);
+    background:linear-gradient(180deg,#FFFFFF 0%, #FFF7F1 100%);
+    border:1.5px solid var(--orange);
   }
-  .card-demo::after{
-    content:''; position:absolute; inset:0; border-radius:var(--radius);
-    background:radial-gradient(circle at 80% 0%, rgba(139,92,246,0.16), transparent 60%);
-    pointer-events:none;
-  }
-  .card-demo:hover{transform:translateY(-4px); box-shadow:0 12px 34px rgba(139,92,246,0.25);}
-  .card-demo:focus-visible{outline:2px solid var(--cyan); outline-offset:3px;}
+  .card-demo .card-head{margin-top:26px;}
+  .card-demo:hover{box-shadow:0 18px 36px rgba(255,107,26,0.18);}
+  .card-demo:focus-visible{outline:3px solid var(--petrol); outline-offset:3px;}
+  .card-demo .icon{background:var(--orange-tint);}
+  .card-demo .icon svg{stroke:var(--orange);}
   .demo-badge{
     position:absolute; top:16px; right:16px; z-index:1;
-    padding:4px 12px; border-radius:999px; background:var(--gradient);
-    color:#0B1120; font-size:11.5px; font-weight:800; letter-spacing:.3px;
+    padding:4px 14px; border-radius:999px; background:var(--orange);
+    color:var(--navy); font-size:12.5px; font-weight:700; letter-spacing:.3px;
   }
 
-  /* DEMO MODAL */
+  /* DEMO PENCERESİ */
   .demo-overlay{
     position:fixed; inset:0; z-index:200; display:none;
     align-items:center; justify-content:center; padding:24px;
-    background:rgba(11,17,32,0.82); backdrop-filter:blur(6px);
+    background:rgba(15,39,51,0.78);
   }
   .demo-overlay.open{display:flex;}
   .demo-modal{
-    background:var(--surface); border:1px solid var(--surface-border);
-    border-radius:24px; padding:40px 32px; max-width:520px; width:100%;
+    background:var(--white); border-radius:26px; padding:44px 34px 36px; max-width:540px; width:100%;
     text-align:center; position:relative; max-height:90vh; overflow-y:auto;
+    box-shadow:0 30px 60px rgba(15,39,51,0.35);
   }
-  .demo-modal h3{font-size:26px; font-weight:800; margin-bottom:10px;}
-  .demo-sub{color:var(--text-muted); font-size:15px; margin-bottom:24px;}
+  .demo-modal h3{font-size:28px; font-weight:700; margin-bottom:10px;}
+  .demo-sub{color:var(--text-muted); font-size:17px; margin-bottom:24px;}
   .demo-close{
     position:absolute; top:14px; right:18px; background:none; border:none;
-    color:var(--text-muted); font-size:30px; line-height:1; cursor:pointer;
+    color:var(--text-muted); font-size:34px; line-height:1; cursor:pointer;
   }
-  .demo-close:hover{color:var(--text);}
+  .demo-close:hover{color:var(--navy);}
   .demo-status{
     display:flex; align-items:center; justify-content:center; gap:10px;
-    padding:14px; border-radius:12px; background:var(--bg-alt);
-    border:1px solid var(--surface-border); margin-bottom:24px;
-    font-size:14.5px; color:var(--text-muted); min-height:52px;
+    padding:14px; border-radius:14px; background:var(--bg);
+    border:1.5px solid var(--border); margin-bottom:24px;
+    font-size:16px; color:var(--text-muted); min-height:54px;
   }
-  .demo-dot{
-    width:10px; height:10px; min-width:10px; border-radius:50%;
-    background:var(--text-muted); transition:background .3s;
-  }
-  .demo-dot.live{background:#22C55E; animation:demoPulse 1.6s infinite;}
-  .demo-dot.busy{background:var(--cyan); animation:demoPulse 1s infinite;}
-  .demo-dot.error{background:#EF4444;}
+  .demo-dot{width:10px; height:10px; min-width:10px; border-radius:50%; background:var(--mist); transition:background .3s;}
+  .demo-dot.live{background:#22A55E; animation:demoPulse 1.6s infinite;}
+  .demo-dot.busy{background:var(--petrol); animation:demoPulse 1s infinite;}
+  .demo-dot.error{background:#E5484D;}
   @keyframes demoPulse{0%,100%{opacity:1;} 50%{opacity:.35;}}
   .demo-actions{display:flex; justify-content:center; gap:12px; flex-wrap:wrap;}
   .demo-actions button{cursor:pointer; font-family:inherit;}
@@ -250,56 +246,65 @@
   .demo-hangup{display:none;}
   .demo-overlay.in-call .demo-hangup{display:inline-block;}
   .demo-overlay.in-call #demoStart{display:none;}
-  .demo-note{margin-top:22px; font-size:12.5px; color:var(--text-muted); opacity:.75;}
-
+  .demo-note{margin-top:22px; font-size:14px; color:var(--text-muted);}
   @media (max-width:600px){
-    .demo-modal{padding:32px 20px; border-radius:20px;}
-    .demo-modal h3{font-size:21px;}
+    .demo-modal{padding:40px 20px 28px; border-radius:22px;}
+    .demo-modal h3{font-size:23px;}
     .demo-actions{flex-direction:column;}
     .demo-actions button{width:100%;}
   }
 
   /* ABOUT */
-  .about{background:var(--bg-alt); border-top:1px solid var(--surface-border); border-bottom:1px solid var(--surface-border);}
-  .about-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center;}
-  .about h2{font-size:34px; font-weight:800; margin-bottom:20px; letter-spacing:-0.5px;}
-  .about p{color:var(--text-muted); font-size:16px; margin-bottom:16px;}
-  .about-points{display:flex; flex-direction:column; gap:20px;}
-  .point{display:flex; gap:14px; align-items:flex-start;}
-  .point .dot{
-    min-width:8px; height:8px; border-radius:50%; background:var(--gradient); margin-top:9px;
+  .about{background:var(--bg);}
+  .about-grid{display:grid; grid-template-columns:1.1fr 0.9fr; gap:70px; align-items:center;}
+  .about h2{font-size:40px; font-weight:700; line-height:1.15; margin-bottom:22px; letter-spacing:-0.5px;}
+  .about p{color:var(--text-muted); font-size:19px; margin-bottom:16px;}
+  .about-points{display:flex; flex-direction:column; gap:18px;}
+  .point{display:flex; gap:18px; align-items:flex-start; background:var(--white); border:1.5px solid var(--border); border-radius:var(--radius); padding:24px 26px;}
+  .point .pill{
+    min-width:34px; height:14px; border-radius:14px; border:3.5px solid var(--petrol); margin-top:9px;
   }
-  .point-title{font-weight:700; font-size:15.5px;}
-  .point-desc{color:var(--text-muted); font-size:14px;}
-  @media (max-width:860px){.about-grid{grid-template-columns:1fr; gap:40px;}}
+  .point:nth-child(2) .pill{border-color:var(--orange); transform:rotate(-40deg); width:34px;}
+  .point-title{font-weight:600; font-size:20px; margin-bottom:2px;}
+  .point-desc{color:var(--text-muted); font-size:16.5px;}
+  @media (max-width:860px){
+    .about-grid{grid-template-columns:1fr; gap:40px;}
+    .about h2{font-size:32px;}
+  }
+  @media (max-width:600px){ .about h2{font-size:28px;} .about p{font-size:17px;} }
 
   /* CONTACT */
-  .contact{text-align:center;}
   .contact-box{
-    background:var(--surface); border:1px solid var(--surface-border); border-radius:24px;
-    padding:64px 32px; max-width:720px; margin:0 auto;
+    background:var(--petrol); color:#fff; border-radius:28px; text-align:center;
+    padding:72px 36px; max-width:860px; margin:0 auto; position:relative; overflow:hidden;
   }
-  .contact-box h2{font-size:32px; font-weight:800; margin-bottom:14px;}
-  .contact-box p{color:var(--text-muted); margin-bottom:32px;}
-  .contact-actions{display:flex; justify-content:center; gap:14px; flex-wrap:wrap;}
-
+  .contact-box::before, .contact-box::after{
+    content:''; position:absolute; border-radius:60px; border:10px solid rgba(255,255,255,0.12); width:230px; height:84px;
+  }
+  .contact-box::before{top:28px; left:-60px;}
+  .contact-box::after{bottom:28px; right:-60px;}
+  .contact-box h2{font-size:40px; font-weight:700; margin-bottom:14px; position:relative;}
+  .contact-box p{color:#DCEAF1; font-size:19px; margin-bottom:34px; position:relative;}
+  .contact-box .actions{justify-content:center; position:relative;}
+  .contact-box .btn-outline{border-color:#fff; color:#fff;}
+  .contact-box .btn-outline:hover{background:#fff; color:var(--petrol);}
   @media (max-width:600px){
-    .contact-box{padding:40px 20px; border-radius:20px;}
-    .contact-box h2{font-size:24px;}
-    .contact-actions{flex-direction:column; align-items:stretch;}
-    .contact-actions a{text-align:center;}
+    .contact-box{padding:48px 22px; border-radius:22px;}
+    .contact-box h2{font-size:28px;}
+    .contact-box p{font-size:17px;}
+    .contact-box .actions{flex-direction:column; align-items:stretch;}
   }
 
-  footer{
-    border-top:1px solid var(--surface-border); padding:32px 24px; text-align:center;
-    color:var(--text-muted); font-size:13.5px;
-  }
-  footer .address{margin-bottom:10px; font-size:13.5px;}
+  /* FOOTER */
+  footer{background:var(--navy); color:var(--mist); text-align:center; padding:56px 28px 36px;}
+  footer .f-logo{height:56px; width:auto; margin:0 auto 26px; display:block;}
+  footer .address{margin-bottom:10px; font-size:16px; color:#E6EEF2;}
+  footer .copy{font-size:14.5px; color:var(--mist);}
+  @media (max-width:480px){ footer .f-logo{height:46px;} }
 
-  @media (max-width:480px){
-    .container{padding:0 16px;}
-  }
+  @media (max-width:480px){ .container{padding-left:18px; padding-right:18px;} }
 
+  /* LANGUAGE TOGGLE (keep last) */
   [data-lang]{display:none;}
   html[lang="tr"] [data-lang="tr"]{display:revert;}
   html[lang="en"] [data-lang="en"]{display:revert;}
@@ -312,23 +317,9 @@
 
 <header>
   <nav class="container">
-    <div class="logo">
-      <svg viewBox="0 0 640 180" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="navGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#8B5CF6"/>
-            <stop offset="100%" stop-color="#22D3EE"/>
-          </linearGradient>
-        </defs>
-        <g transform="translate(20,10)">
-          <g transform="translate(80,80)">
-            <rect x="-30" y="-70" width="60" height="140" rx="30" transform="rotate(45)" fill="url(#navGrad)"/>
-            <rect x="-30" y="-70" width="60" height="140" rx="30" transform="rotate(-45)" fill="url(#navGrad)" opacity="0.85"/>
-          </g>
-        </g>
-        <text x="190" y="115" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="92" fill="#F8FAFC">LoCX</text>
-      </svg>
-    </div>
+    <a class="logo" href="#top" aria-label="LoCX Lab">
+      <img src="locx-lab-horizontal-compact-color.svg" alt="LoCX Lab">
+    </a>
     <div class="nav-links" id="navLinks">
       <a href="#services" data-lang="tr">Hizmetler</a>
       <a href="#services" data-lang="en">Services</a>
@@ -341,29 +332,38 @@
         <button onclick="setLang('en')" id="btn-en">EN</button>
       </div>
     </div>
-    <button class="mobile-toggle" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    <button class="mobile-toggle" aria-label="Menu" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="container hero-content">
-    <span class="eyebrow" data-lang="tr">40+ Yıllık Sektör Tecrübesi</span>
-    <span class="eyebrow" data-lang="en">40+ Years of Industry Experience</span>
-    <h1 data-lang="tr">Müşteri deneyiminde <span>uçtan uca</span> teknoloji ve danışmanlık ortağınız</h1>
-    <h1 data-lang="en">Your end-to-end <span>technology &amp; consulting</span> partner in customer experience</h1>
-    <p data-lang="tr">LoCX; çağrı merkezi, yazılım &amp; AI dönüşümü, konuşma/metin analitiği ve kurumsal performans yönetimi alanlarında enterprise seviyesinde uzmanlık sunar.</p>
-    <p data-lang="en">LoCX delivers enterprise-grade expertise across contact centers, software &amp; AI transformation, speech/text analytics, and enterprise performance management.</p>
-    <a href="#contact" class="btn" data-lang="tr">Bize Ulaşın</a>
-    <a href="#contact" class="btn" data-lang="en">Get in Touch</a>
-    <a href="#services" class="btn-outline" data-lang="tr">Hizmetleri Keşfedin</a>
-    <a href="#services" class="btn-outline" data-lang="en">Explore Services</a>
+<section class="hero" id="top" style="padding:0">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow" data-lang="tr">40+ Yıllık Sektör Tecrübesi</span>
+      <span class="eyebrow" data-lang="en">40+ Years of Industry Experience</span>
+      <h1 data-lang="tr">Müşteri deneyiminde <span>uçtan uca</span> teknoloji ve danışmanlık ortağınız</h1>
+      <h1 data-lang="en">Your end-to-end <span>technology &amp; consulting</span> partner in customer experience</h1>
+      <p data-lang="tr">LoCX Lab; çağrı merkezi, yazılım &amp; Yapay Zeka dönüşümü, konuşma/metin analitiği ve kurumsal performans yönetimi alanlarında kurumsal seviyede uzmanlık sunar.</p>
+      <p data-lang="en">LoCX Lab delivers enterprise-grade expertise across contact centers, software &amp; AI transformation, speech/text analytics, and enterprise performance management.</p>
+      <div class="actions">
+        <a href="#contact" class="btn" data-lang="tr">Bize Ulaşın</a>
+        <a href="#contact" class="btn" data-lang="en">Get in Touch</a>
+        <a href="#services" class="btn-outline" data-lang="tr">Hizmetleri Keşfedin</a>
+        <a href="#services" class="btn-outline" data-lang="en">Explore Services</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="locx-lab-symbol-color.svg" alt="">
+    </div>
   </div>
 </section>
 
 <div class="stats">
-  <div class="stat"><div class="num">40+</div><div class="label" data-lang="tr">Yıl Sektör Tecrübesi</div><div class="label" data-lang="en">Years of Experience</div></div>
-  <div class="stat"><div class="num">8</div><div class="label" data-lang="tr">Uçtan Uca Çözüm</div><div class="label" data-lang="en">End-to-End Solutions</div></div>
-  <div class="stat"><div class="num">Global</div><div class="label" data-lang="tr">Kurumsal Projeler</div><div class="label" data-lang="en">Enterprise Projects</div></div>
+  <div class="stats-inner">
+    <div class="stat"><div class="num">40+</div><div class="label" data-lang="tr">Yıl Sektör Tecrübesi</div><div class="label" data-lang="en">Years of Experience</div></div>
+    <div class="stat"><div class="num">8</div><div class="label" data-lang="tr">Uçtan Uca Çözüm</div><div class="label" data-lang="en">End-to-End Solutions</div></div>
+    <div class="stat"><div class="num">Global</div><div class="label" data-lang="tr">Kurumsal Projeler</div><div class="label" data-lang="en">Enterprise Projects</div></div>
+  </div>
 </div>
 
 <section id="services" class="container">
@@ -372,14 +372,14 @@
     <span class="eyebrow" data-lang="en">Our Services</span>
     <h2 data-lang="tr">Tek çatı altında uçtan uca çözümler</h2>
     <h2 data-lang="en">End-to-end solutions under one roof</h2>
-    <p data-lang="tr">Sektörün önde gelen platformlarında edindiğimiz derin know-how ile, ihtiyacınıza özel danışmanlık ve teknoloji hizmetleri sunuyoruz.</p>
+    <p data-lang="tr">Sektörün önde gelen platformlarında edindiğimiz derin uzmanlığımız ile, ihtiyacınıza özel danışmanlık ve teknoloji hizmetleri sunuyoruz.</p>
     <p data-lang="en">Backed by deep know-how across leading industry platforms, we deliver consulting and technology services tailored to your needs.</p>
   </div>
   <div class="services-grid">
     <div class="card">
       <div class="card-head">
         <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
         </div>
         <h3 data-lang="tr">Profesyonel Danışmanlık</h3>
         <h3 data-lang="en">Professional Services</h3>
@@ -390,7 +390,7 @@
     <div class="card">
       <div class="card-head">
         <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
         </div>
         <h3 data-lang="tr">Çağrı Merkezi Çözümleri</h3>
         <h3 data-lang="en">Contact Center Solutions</h3>
@@ -401,9 +401,9 @@
     <div class="card">
       <div class="card-head">
         <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
         </div>
-        <h3 data-lang="tr">Yazılım &amp; AI Dönüşüm Danışmanlığı</h3>
+        <h3 data-lang="tr">Yazılım &amp; Yapay Zeka Dönüşüm Danışmanlığı</h3>
         <h3 data-lang="en">Software &amp; AI Transformation Consulting</h3>
       </div>
       <p data-lang="tr">Yapay zeka ve otomasyon teknolojileriyle iş süreçlerinizi yeniden tasarlıyoruz.</p>
@@ -412,7 +412,7 @@
     <div class="card">
       <div class="card-head">
         <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         </div>
         <h3 data-lang="tr">Konuşma &amp; Metin Analitiği</h3>
         <h3 data-lang="en">Speech &amp; Text Analytics</h3>
@@ -423,7 +423,7 @@
     <div class="card">
       <div class="card-head">
         <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
         </div>
         <h3 data-lang="tr">Santral Destek, Bakım &amp; Entegrasyon</h3>
         <h3 data-lang="en">PBX Support, Maintenance &amp; Integration</h3>
@@ -434,7 +434,7 @@
     <div class="card">
       <div class="card-head">
         <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
         </div>
         <h3 data-lang="tr">Kurumsal Performans Yönetimi</h3>
         <h3 data-lang="en">Enterprise Performance Management</h3>
@@ -445,7 +445,7 @@
     <div class="card">
       <div class="card-head">
         <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L13.42 20.58a2 2 0 0 1-2.83 0L2.41 12.4a2 2 0 0 1-.59-1.42V4a2 2 0 0 1 2-2h6.99c.53 0 1.04.21 1.41.59l8.01 8a2 2 0 0 1 .01 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L13.42 20.58a2 2 0 0 1-2.83 0L2.41 12.4a2 2 0 0 1-.59-1.42V4a2 2 0 0 1 2-2h6.99c.53 0 1.04.21 1.41.59l8.01 8a2 2 0 0 1 .01 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
         </div>
         <h3 data-lang="tr">Ticket Yönetim Sistemi</h3>
         <h3 data-lang="en">Ticket Management System</h3>
@@ -458,7 +458,7 @@
       <span class="demo-badge" data-lang="en">Live Demo</span>
       <div class="card-head">
         <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
         </div>
         <h3 data-lang="tr">Sesli Yapay Zeka Asistanı</h3>
         <h3 data-lang="en">AI Voice Agent</h3>
@@ -471,7 +471,7 @@
       <span class="demo-badge" data-lang="en">Live Demo</span>
       <div class="card-head">
         <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/><line x1="22" y1="10" x2="22" y2="16"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/><line x1="22" y1="10" x2="22" y2="16"/></svg>
         </div>
         <h3 data-lang="tr">Öğrenci İşleri Asistanı</h3>
         <h3 data-lang="en">Student Affairs Assistant</h3>
@@ -484,7 +484,7 @@
       <span class="demo-badge" data-lang="en">Live Demo</span>
       <div class="card-head">
         <div class="icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 9h2M13 9h2M9 13h2M13 13h2M9 17h2M13 17h2"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 9h2M13 9h2M9 13h2M13 13h2M9 17h2M13 17h2"/></svg>
         </div>
         <h3 data-lang="tr">Site Yönetimi Asistanı</h3>
         <h3 data-lang="en">Property Management Assistant</h3>
@@ -492,6 +492,7 @@
       <p data-lang="tr">Aidat, otopark, arıza ve misafir işlemleri. Riske göre kademeli kimlik doğrulama yapar. Denemek için tıklayın.</p>
       <p data-lang="en">Dues, parking, maintenance and guest access — with risk-based identity verification. Click to try it live.</p>
     </button>
+  </div>
   </div>
 </section>
 
@@ -529,32 +530,32 @@
       <span class="eyebrow" data-lang="en">About Us</span>
       <h2 data-lang="tr">Sektörde 40 yılı aşkın birikimin buluştuğu ortaklık</h2>
       <h2 data-lang="en">A partnership built on 40+ years of combined industry experience</h2>
-      <p data-lang="tr">LoCX, kurucu ortaklarının müşteri deneyimi ve teknoloji sektöründe edindiği 40 yılı aşkın birikimle kurulmuş bir danışmanlık ve teknoloji şirketidir.</p>
-      <p data-lang="en">LoCX is a consulting and technology company founded on more than 40 years of combined experience in the customer experience and technology industry.</p>
-      <p data-lang="tr">Kariyerimiz boyunca enterprise seviyesinde kurumsal müşterilere yurt içi ve yurt dışında projeler hayata geçirdik.</p>
+      <p data-lang="tr">LoCX Lab, kurucu ortaklarının müşteri deneyimi ve teknoloji sektöründe edindiği 40 yılı aşkın birikimle kurulmuş bir danışmanlık ve teknoloji şirketidir.</p>
+      <p data-lang="en">LoCX Lab is a consulting and technology company founded on more than 40 years of combined experience in the customer experience and technology industry.</p>
+      <p data-lang="tr">Kariyerimiz boyunca kurumsal seviyede müşterilere yurt içi ve yurt dışında projeler hayata geçirdik.</p>
       <p data-lang="en">Throughout our careers we have delivered projects for enterprise-level clients both in Turkey and internationally.</p>
     </div>
     <div class="about-points">
       <div class="point">
-        <div class="dot"></div>
+        <div class="pill"></div>
         <div>
-          <div class="point-title" data-lang="tr">Derin Sektör Know-How'ı</div>
+          <div class="point-title" data-lang="tr">Derin Sektör Uzmanlığı</div>
           <div class="point-title" data-lang="en">Deep Industry Know-How</div>
           <div class="point-desc" data-lang="tr">Sektörün önde gelen platformları üzerinde uzun yıllara dayanan tecrübe.</div>
           <div class="point-desc" data-lang="en">Years of hands-on experience with leading industry platforms.</div>
         </div>
       </div>
       <div class="point">
-        <div class="dot"></div>
+        <div class="pill"></div>
         <div>
           <div class="point-title" data-lang="tr">Global Proje Tecrübesi</div>
           <div class="point-title" data-lang="en">Global Project Experience</div>
-          <div class="point-desc" data-lang="tr">Yurt içi ve yurt dışında enterprise ölçekli projelerde yer aldık.</div>
+          <div class="point-desc" data-lang="tr">Yurt içi ve yurt dışında kurumsal ölçekli projelerde yer aldık.</div>
           <div class="point-desc" data-lang="en">We have delivered enterprise-scale projects both locally and abroad.</div>
         </div>
       </div>
       <div class="point">
-        <div class="dot"></div>
+        <div class="pill"></div>
         <div>
           <div class="point-title" data-lang="tr">Uçtan Uca Yaklaşım</div>
           <div class="point-title" data-lang="en">End-to-End Approach</div>
@@ -566,13 +567,13 @@
   </div>
 </section>
 
-<section id="contact" class="contact container">
+<section id="contact" class="container">
   <div class="contact-box">
     <h2 data-lang="tr">Projenizi konuşalım</h2>
     <h2 data-lang="en">Let's talk about your project</h2>
     <p data-lang="tr">İhtiyaçlarınızı dinlemek ve size özel çözüm önerileri sunmak için buradayız.</p>
     <p data-lang="en">We're here to listen to your needs and offer solutions tailored to you.</p>
-    <div class="contact-actions">
+    <div class="actions">
       <a href="mailto:info@locxlab.com" class="btn" data-lang="tr">E-posta Gönder</a>
       <a href="mailto:info@locxlab.com" class="btn" data-lang="en">Send an Email</a>
       <a href="https://locxlab.com" class="btn-outline">locxlab.com</a>
@@ -581,10 +582,11 @@
 </section>
 
 <footer>
+  <img class="f-logo" src="locx-lab-horizontal-reversed.svg" alt="LoCX Lab — Technology &amp; Consulting">
   <div class="address" data-lang="tr">WorkOn Ofis — Küçükbakkalköy Mah. Selvili Sok. No: 4/20, Ataşehir / İstanbul</div>
   <div class="address" data-lang="en">WorkOn Office — Küçükbakkalköy Mah. Selvili Sok. No: 4/20, Ataşehir / Istanbul, Türkiye</div>
-  <div data-lang="tr">© 2026 LoCX. Tüm hakları saklıdır.</div>
-  <div data-lang="en">© 2026 LoCX. All rights reserved.</div>
+  <div class="copy" data-lang="tr">© 2026 LoCX Lab. Tüm hakları saklıdır.</div>
+  <div class="copy" data-lang="en">© 2026 LoCX Lab. All rights reserved.</div>
 </footer>
 
 <script>
